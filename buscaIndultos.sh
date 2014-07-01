@@ -10,7 +10,7 @@ do
         echo -ne "Analizando a $contador de $totalFicheros [http://www.boe.es$ruta]"\\r
         wget http://www.boe.es$ruta -qO temp.pdf
         pdf2txt temp.pdf >> temp.txt 2>/dev/null
-        referencias=$(cat temp.txt | sed 's/ //g' | grep -i "indult|conmuta" | wc -l)
+        referencias=$(cat temp.txt | sed 's/ //g' | egrep -i "indult|conmuta" | wc -l)
         if [ "$referencias" = "0" ]
         then
                 sinIndulto=$(( sinIndulto + 1 ))
