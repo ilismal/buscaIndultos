@@ -15,12 +15,12 @@ do
         then
                 sinIndulto=$(( sinIndulto + 1 ))
         else
-                conIndulto=$(( conInduto + 1 ))
+                conIndulto=$(( conIndulto + 1 ))
                 echo "http://www.boe.es$ruta" >> pdfConIndultos.txt
         fi
         #echo "$referencias referencia(s) a indultos en http://www.boe.es$ruta"
         rm temp.*
-        contador=$((contador + 1 ))
+        contador=$(( contador + 1 ))
 done
 echo "$totalFicheros analizados"
 echo "$conIndulto con referencias a indultos"
